@@ -2,30 +2,54 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: 700, margin: "0 auto" }}>
-      
-      <h1>CalcForge</h1>
-      <p>Free UK financial calculators for loans, mortgages, and savings.</p>
+    <div>
 
-      <h2>Calculators</h2>
+      {/* HERO */}
+      <div style={{
+        background: "white",
+        padding: 24,
+        borderRadius: 12,
+        boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+      }}>
+        <h1>UK Financial Calculators</h1>
+        <p>
+          Instantly calculate mortgage and loan repayments with simple, free tools.
+        </p>
+      </div>
 
-      <ul>
-        <li>
-          <Link href="/calculators/mortgage">
-            Mortgage Calculator
-          </Link>
-        </li>
+      {/* CARDS */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+        gap: 16,
+        marginTop: 20
+      }}>
 
-        <li>
-          <Link href="/calculators/loan">
-            Loan Calculator
-          </Link>
-        </li>
-      </ul>
+        <Link href="/calculators/mortgage" style={{
+          background: "white",
+          padding: 20,
+          borderRadius: 12,
+          textDecoration: "none",
+          color: "black",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+        }}>
+          <h3>Mortgage Calculator</h3>
+          <p>Estimate monthly repayments for UK mortgages.</p>
+        </Link>
 
-      <p style={{ marginTop: 40, fontSize: 12 }}>
-        Simple tools to estimate repayments instantly.
-      </p>
+        <Link href="/calculators/loan" style={{
+          background: "white",
+          padding: 20,
+          borderRadius: 12,
+          textDecoration: "none",
+          color: "black",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+        }}>
+          <h3>Loan Calculator</h3>
+          <p>Calculate personal loan repayments instantly.</p>
+        </Link>
+
+      </div>
 
     </div>
   );
